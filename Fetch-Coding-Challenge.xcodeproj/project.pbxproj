@@ -32,6 +32,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C124FFA2C02AC86008075D1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CD960052C01E26B0023B8E6 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C124FFB2C02AC8C008075D1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		5C124FFC2C02AC91008075D1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5CD95FF72C01E26B0023B8E6 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +73,10 @@
 		5CD960022C01E26B0023B8E6 /* Fetch-Coding-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				5C124FFC2C02AC91008075D1 /* Models */,
+				5C124FFB2C02AC8C008075D1 /* ViewModels */,
+				5C124FFA2C02AC86008075D1 /* Views */,
 				5CD960032C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift */,
-				5CD960052C01E26B0023B8E6 /* ContentView.swift */,
 				5CD960072C01E26C0023B8E6 /* Assets.xcassets */,
 				5CD960092C01E26C0023B8E6 /* Preview Content */,
 			);
