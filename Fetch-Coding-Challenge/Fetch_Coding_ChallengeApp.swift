@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct Fetch_Coding_ChallengeApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

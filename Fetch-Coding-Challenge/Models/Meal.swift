@@ -6,3 +6,22 @@
 //
 
 import Foundation
+
+struct Meal: Codable, Identifiable {
+    
+    //Changed the api string representation into a more intuitive string format
+    enum CodingKeys: String, CodingKey {
+        case mealName = "strMeal"
+        case image = "strMealThumb"
+        case id = "idMeal"
+    }
+    
+    let mealName: String
+    let image: String
+    let id: String
+}
+
+
+struct MealMenu: Codable {
+    let meals: [Meal]
+}

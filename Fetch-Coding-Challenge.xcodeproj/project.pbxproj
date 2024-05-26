@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C124FFE2C02BEB8008075D1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C124FFD2C02BEB8008075D1 /* Meal.swift */; };
+		5C1250002C02BF7B008075D1 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C124FFF2C02BF7B008075D1 /* MealViewModel.swift */; };
 		5CD960042C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD960032C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift */; };
 		5CD960062C01E26B0023B8E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD960052C01E26B0023B8E6 /* ContentView.swift */; };
 		5CD960082C01E26C0023B8E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD960072C01E26C0023B8E6 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C124FFD2C02BEB8008075D1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		5C124FFF2C02BF7B008075D1 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		5CD960002C01E26B0023B8E6 /* Fetch-Coding-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch-Coding-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD960032C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Coding_ChallengeApp.swift; sourceTree = "<group>"; };
 		5CD960052C01E26B0023B8E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 		5C124FFB2C02AC8C008075D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5C124FFF2C02BF7B008075D1 /* MealViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -50,6 +55,7 @@
 		5C124FFC2C02AC91008075D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5C124FFD2C02BEB8008075D1 /* Meal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,7 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1250002C02BF7B008075D1 /* MealViewModel.swift in Sources */,
 				5CD960062C01E26B0023B8E6 /* ContentView.swift in Sources */,
+				5C124FFE2C02BEB8008075D1 /* Meal.swift in Sources */,
 				5CD960042C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
