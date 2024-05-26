@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var mealViewModel = MealViewModel()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ScrollView(.vertical){
+                ForEach(mealViewModel.meals) { meal in
+                    Text(meal.mealName)
+                }
+            }
+            .scrollIndicators(.hidden)
         }
-        .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    @StateObject var mealViewModel = MealViewModel()
+    
+    return ContentView(mealViewModel: mealViewModel)
 }
