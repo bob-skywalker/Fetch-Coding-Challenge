@@ -7,20 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C124FFE2C02BEB8008075D1 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C124FFD2C02BEB8008075D1 /* Meal.swift */; };
+		5C124FFE2C02BEB8008075D1 /* Dessert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C124FFD2C02BEB8008075D1 /* Dessert.swift */; };
 		5C1250002C02BF7B008075D1 /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C124FFF2C02BF7B008075D1 /* MealViewModel.swift */; };
+		5C8124E72C0400860029B51F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5C8124E62C0400860029B51F /* Kingfisher */; };
+		5C8124EF2C040E220029B51F /* DessertTextModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8124EE2C040E220029B51F /* DessertTextModifier.swift */; };
+		5C8124F12C040F270029B51F /* DessertTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8124F02C040F260029B51F /* DessertTextView.swift */; };
+		5C8BF3602C041C530081E3F0 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BF35F2C041C530081E3F0 /* ContainerView.swift */; };
+		5C8BF3632C041CCC0081E3F0 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8BF3622C041CCC0081E3F0 /* SplashScreenView.swift */; };
 		5CD960042C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD960032C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift */; };
-		5CD960062C01E26B0023B8E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD960052C01E26B0023B8E6 /* ContentView.swift */; };
+		5CD960062C01E26B0023B8E6 /* DessertListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD960052C01E26B0023B8E6 /* DessertListView.swift */; };
 		5CD960082C01E26C0023B8E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD960072C01E26C0023B8E6 /* Assets.xcassets */; };
 		5CD9600B2C01E26C0023B8E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CD9600A2C01E26C0023B8E6 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5C124FFD2C02BEB8008075D1 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		5C124FFD2C02BEB8008075D1 /* Dessert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dessert.swift; sourceTree = "<group>"; };
 		5C124FFF2C02BF7B008075D1 /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
+		5C8124EE2C040E220029B51F /* DessertTextModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertTextModifier.swift; sourceTree = "<group>"; };
+		5C8124F02C040F260029B51F /* DessertTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertTextView.swift; sourceTree = "<group>"; };
+		5C8BF35F2C041C530081E3F0 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		5C8BF3622C041CCC0081E3F0 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		5CD960002C01E26B0023B8E6 /* Fetch-Coding-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fetch-Coding-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CD960032C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fetch_Coding_ChallengeApp.swift; sourceTree = "<group>"; };
-		5CD960052C01E26B0023B8E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5CD960052C01E26B0023B8E6 /* DessertListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertListView.swift; sourceTree = "<group>"; };
 		5CD960072C01E26C0023B8E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5CD9600A2C01E26C0023B8E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -30,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8124E72C0400860029B51F /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +49,8 @@
 		5C124FFA2C02AC86008075D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5CD960052C01E26B0023B8E6 /* ContentView.swift */,
+				5C8BF3612C041CB00081E3F0 /* LaunchScreenView */,
+				5C8124F22C040FD10029B51F /* DessertListView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -55,9 +66,36 @@
 		5C124FFC2C02AC91008075D1 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				5C124FFD2C02BEB8008075D1 /* Meal.swift */,
+				5C124FFD2C02BEB8008075D1 /* Dessert.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5C8124ED2C040DFF0029B51F /* DessertList-ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				5C8124EE2C040E220029B51F /* DessertTextModifier.swift */,
+			);
+			path = "DessertList-ViewModifiers";
+			sourceTree = "<group>";
+		};
+		5C8124F22C040FD10029B51F /* DessertListView */ = {
+			isa = PBXGroup;
+			children = (
+				5CD960052C01E26B0023B8E6 /* DessertListView.swift */,
+				5C8124F02C040F260029B51F /* DessertTextView.swift */,
+				5C8124ED2C040DFF0029B51F /* DessertList-ViewModifiers */,
+			);
+			path = DessertListView;
+			sourceTree = "<group>";
+		};
+		5C8BF3612C041CB00081E3F0 /* LaunchScreenView */ = {
+			isa = PBXGroup;
+			children = (
+				5C8BF35F2C041C530081E3F0 /* ContainerView.swift */,
+				5C8BF3622C041CCC0081E3F0 /* SplashScreenView.swift */,
+			);
+			path = LaunchScreenView;
 			sourceTree = "<group>";
 		};
 		5CD95FF72C01E26B0023B8E6 = {
@@ -113,6 +151,9 @@
 			dependencies = (
 			);
 			name = "Fetch-Coding-Challenge";
+			packageProductDependencies = (
+				5C8124E62C0400860029B51F /* Kingfisher */,
+			);
 			productName = "Fetch-Coding-Challenge";
 			productReference = 5CD960002C01E26B0023B8E6 /* Fetch-Coding-Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -141,6 +182,9 @@
 				Base,
 			);
 			mainGroup = 5CD95FF72C01E26B0023B8E6;
+			packageReferences = (
+				5C8124E52C0400860029B51F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 5CD960012C01E26B0023B8E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -167,10 +211,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C8124F12C040F270029B51F /* DessertTextView.swift in Sources */,
 				5C1250002C02BF7B008075D1 /* MealViewModel.swift in Sources */,
-				5CD960062C01E26B0023B8E6 /* ContentView.swift in Sources */,
-				5C124FFE2C02BEB8008075D1 /* Meal.swift in Sources */,
+				5C8BF3602C041C530081E3F0 /* ContainerView.swift in Sources */,
+				5CD960062C01E26B0023B8E6 /* DessertListView.swift in Sources */,
+				5C124FFE2C02BEB8008075D1 /* Dessert.swift in Sources */,
 				5CD960042C01E26B0023B8E6 /* Fetch_Coding_ChallengeApp.swift in Sources */,
+				5C8124EF2C040E220029B51F /* DessertTextModifier.swift in Sources */,
+				5C8BF3632C041CCC0081E3F0 /* SplashScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +424,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C8124E52C0400860029B51F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C8124E62C0400860029B51F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C8124E52C0400860029B51F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5CD95FF82C01E26B0023B8E6 /* Project object */;
 }

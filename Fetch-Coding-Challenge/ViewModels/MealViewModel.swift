@@ -8,8 +8,8 @@
 import Foundation
 import Combine
 
-class MealViewModel: ObservableObject {
-    @Published var meals: [Meal] = []
+class DessertViewModel: ObservableObject {
+    @Published var meals: [Dessert] = []
     var cancellables: Set<AnyCancellable> = []
     
     init() {
