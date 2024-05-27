@@ -10,16 +10,17 @@ import Kingfisher
 
 
 struct DessertListView: View {
-    @StateObject var dessertViewModel = DessertViewModel()
+    @EnvironmentObject var dessertViewModel: DessertViewModel
     
     //State Management for toggling between light & dark mode
-    @State private var isDarkMode: Bool = false
+    @State var isDarkMode: Bool = false
     @State var colorScheme: ColorScheme = .light
     
     //adopts an adaptive grid size that fits different screen sizes
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
+    
     
     var body: some View {
         NavigationStack {
@@ -32,6 +33,7 @@ struct DessertListView: View {
                             ZStack(alignment: .bottom){
                                 
                                 KFImage(URL(string: meal.image))
+                                
                                 
                                 //Custom loading screen for fetch reward
                                     .placeholder({
@@ -51,16 +53,22 @@ struct DessertListView: View {
                                 
                                 //Refactored into its own SwiftUI View & ViewModifier for reusability
                                 DessertTextView(dessertName: meal.dessertName)
+                                    .padding(5)
+                                    .background(colorScheme == .dark ? .black : .white)
+                                    .foregroundStyle(colorScheme == .dark ? .white : .black).bold()
+                                    .font(.caption)
+                                    .clipShape(RoundedRectangle(cornerRadius: 11))
+                                    .offset(y: -10)
                                 
                             }
+                            .padding(.horizontal, 2)
                         }
-                        
-                        
                     }
                 })
             }
+            //utilizes navigationDestination for performance optimization
             .navigationDestination(for: Dessert.self, destination: { dessert in
-                DessertDetailView()
+                DessertDetailView(isDarkMode: $isDarkMode, colorScheme: $colorScheme, dessertId: dessert.id, image: KFImage(URL(string: dessert.image)), dessertName: dessert.dessertName)
             })
             .scrollIndicators(.hidden)
             .navigationTitle("Fetch Dessert")
@@ -76,6 +84,9 @@ struct DessertListView: View {
                     })
                 }
             })
+            .refreshable {
+                dessertViewModel.fetchMeals()
+            }
             
         }
         .preferredColorScheme(colorScheme)
@@ -83,13 +94,18 @@ struct DessertListView: View {
     
     //toggle between user colorScheme state
     func updateColorScheme() {
-        isDarkMode.toggle()
-        colorScheme = isDarkMode ? .dark : .light
+        withAnimation(.easeIn(duration: 0.20)) {
+            let heavyTouch = UIImpactFeedbackGenerator(style: .heavy)
+            heavyTouch.impactOccurred()
+            isDarkMode.toggle()
+            colorScheme = isDarkMode ? .dark : .light
+        }
     }
 }
 
 #Preview {
     @StateObject var dessertViewModel = DessertViewModel()
     
-    return DessertListView(dessertViewModel: dessertViewModel)
+    return DessertListView()
+        .environmentObject(dessertViewModel)
 }
