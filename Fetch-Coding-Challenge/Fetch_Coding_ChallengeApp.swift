@@ -12,6 +12,7 @@ struct Fetch_Coding_ChallengeApp: App {
     
     var body: some Scene {
         WindowGroup {
+            //Swapped for ContainerView to toggle between launchScreen and DessertListView
             ContainerView()
         }
     }

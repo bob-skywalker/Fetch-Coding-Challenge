@@ -6,20 +6,33 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct DessertDetailView: View {
+    @EnvironmentObject var dessertDetailViewModel: DessertDetailViewModel
+    let dessertId: String
     
     var body: some View {
         ScrollView {
-            Text("Dessert Detail View")
+            
+            Text(dessertDetailViewModel.dessertDetail?.mealName ?? "")
+                .font(.headline)
+            
+            KFImage(URL(string: dessertDetailViewModel.dessertDetail?.image ?? ""))
+                .resizable()
+                .scaledToFit()
+                .padding()
         }
+        .onAppear(perform: {
+            dessertDetailViewModel.fetchDessertDetail(with: dessertId)
+        })
     }
     
-    func dessertDetail() {
-        
-    }
 }
 
 #Preview {
-    DessertDetailView()
+    @StateObject var dessertDetailViewModel = DessertDetailViewModel()
+    
+    return DessertDetailView(dessertId: "52893")
+        .environmentObject(dessertDetailViewModel)
 }

@@ -60,7 +60,7 @@ struct DessertListView: View {
                 })
             }
             .navigationDestination(for: Dessert.self, destination: { dessert in
-                DessertDetailView()
+                DessertDetailView(dessertId: dessert.id)
             })
             .scrollIndicators(.hidden)
             .navigationTitle("Fetch Dessert")
