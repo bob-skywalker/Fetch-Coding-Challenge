@@ -12,9 +12,9 @@ struct ContainerView: View {
     
     var body: some View {
         if !isSplashScreenViewPresented {
-            
+            DessertListView()
         } else {
-            
+            SplashScreenView(isPresented: $isSplashScreenViewPresented)
         }
     }
 }

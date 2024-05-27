@@ -12,6 +12,10 @@ import Kingfisher
 struct DessertListView: View {
     @StateObject var dessertViewModel = DessertViewModel()
     
+    //State Management for toggling between light & dark mode
+    @State private var isDarkMode: Bool = false
+    @State var colorScheme: ColorScheme = .light
+    
     //adopts an adaptive grid size that fits different screen sizes
     let columns = [
         GridItem(.adaptive(minimum: 150))
@@ -56,7 +60,26 @@ struct DessertListView: View {
             .scrollIndicators(.hidden)
             .navigationTitle("Fetch Dessert")
             
+            //Togging the state for colorScheme between light and dark
+            .toolbar(content: {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button(action: {
+                        updateColorScheme()
+                    }, label: {
+                        Image(systemName: isDarkMode ? "sun.max.fill" : "moon.fill")
+                            .foregroundStyle(isDarkMode ? .white : .black)
+                    })
+                }
+            })
+            
         }
+        .preferredColorScheme(colorScheme)
+    }
+    
+    //toggle between user colorScheme state
+    func updateColorScheme() {
+        isDarkMode.toggle()
+        colorScheme = isDarkMode ? .dark : .light
     }
 }
 

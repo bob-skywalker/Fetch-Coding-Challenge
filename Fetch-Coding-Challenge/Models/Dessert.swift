@@ -9,16 +9,24 @@ import Foundation
 
 struct Dessert: Codable, Identifiable {
     
+    init(dessertName: String, image: String, id: String) {
+        self.dessertName = dessertName
+        self.image = image
+        self.id = id
+    }
+    
     //Changed the api string representation into a more intuitive string format
     enum CodingKeys: String, CodingKey {
-        case mealName = "strMeal"
+        case dessertName = "strMeal"
         case image = "strMealThumb"
         case id = "idMeal"
     }
     
-    let mealName: String
+    let dessertName: String
     let image: String
     let id: String
+    
+
 }
 
 
