@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct DessertListView: View {
     @StateObject var mealViewModel = MealViewModel()
     
     var body: some View {
         NavigationStack {
             ScrollView(.vertical){
-                ForEach(mealViewModel.meals) { meal in
-                    Text(meal.mealName)
+                ForEach(mealViewModel.meals) { dessert in
+                    Text(dessert.dessertName)
                 }
             }
             .scrollIndicators(.hidden)
+            .navigationTitle("Fetch Dessert")
         }
     }
 }
@@ -25,5 +26,5 @@ struct ContentView: View {
 #Preview {
     @StateObject var mealViewModel = MealViewModel()
     
-    return ContentView(mealViewModel: mealViewModel)
+    return DessertListView(mealViewModel: mealViewModel)
 }

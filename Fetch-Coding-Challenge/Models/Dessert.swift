@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Meal: Codable, Identifiable {
+struct Dessert: Codable, Identifiable {
     
     //Changed the api string representation into a more intuitive string format
     enum CodingKeys: String, CodingKey {
@@ -23,5 +23,5 @@ struct Meal: Codable, Identifiable {
 
 
 struct MealMenu: Codable {
-    let meals: [Meal]
+    let meals: [Dessert]
 }
