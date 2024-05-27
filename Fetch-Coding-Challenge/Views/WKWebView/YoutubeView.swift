@@ -8,12 +8,19 @@
 import SwiftUI
 import WebKit
 
-struct YoutubeView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+struct YoutubeView: UIViewRepresentable {
+    var url: URL
+    
+    func makeUIView(context: Context) -> WKWebView {
+        return WKWebView()
+    }
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        let request = URLRequest(url: url)
+        uiView.load(request)
     }
 }
 
 #Preview {
-    YoutubeView()
+    YoutubeView(url: URL(string: "https://www.youtube.com/watch?v=6R8ffRRJcrg&ab_channel=CheNom")!)
 }

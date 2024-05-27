@@ -13,13 +13,14 @@ struct DessertListView: View {
     @StateObject var dessertViewModel = DessertViewModel()
     
     //State Management for toggling between light & dark mode
-    @State private var isDarkMode: Bool = false
+    @State var isDarkMode: Bool = false
     @State var colorScheme: ColorScheme = .light
     
     //adopts an adaptive grid size that fits different screen sizes
     let columns = [
         GridItem(.adaptive(minimum: 150))
     ]
+    
     
     var body: some View {
         NavigationStack {
@@ -51,16 +52,16 @@ struct DessertListView: View {
                                 
                                 //Refactored into its own SwiftUI View & ViewModifier for reusability
                                 DessertTextView(dessertName: meal.dessertName)
+                                    .dessertTextModifier()
                                 
                             }
                         }
-                        
-                        
                     }
                 })
             }
+            //utilizes navigationDestination for performance optimization
             .navigationDestination(for: Dessert.self, destination: { dessert in
-                DessertDetailView(dessertId: dessert.id)
+                DessertDetailView(isDarkMode: $isDarkMode, colorScheme: $colorScheme, dessertId: dessert.id, image: KFImage(URL(string: dessert.image)), dessertName: dessert.dessertName)
             })
             .scrollIndicators(.hidden)
             .navigationTitle("Fetch Dessert")
@@ -76,6 +77,9 @@ struct DessertListView: View {
                     })
                 }
             })
+            .refreshable {
+                dessertViewModel.fetchMeals()
+            }
             
         }
         .preferredColorScheme(colorScheme)
@@ -83,8 +87,10 @@ struct DessertListView: View {
     
     //toggle between user colorScheme state
     func updateColorScheme() {
-        isDarkMode.toggle()
-        colorScheme = isDarkMode ? .dark : .light
+        withAnimation(.easeIn(duration: 0.35)) {
+            isDarkMode.toggle()
+            colorScheme = isDarkMode ? .dark : .light
+        }
     }
 }
 

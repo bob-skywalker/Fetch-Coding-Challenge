@@ -13,7 +13,6 @@ struct DessertTextView: View {
     
     var body: some View {
         Text(dessertName)
-            .dessertTextModifier()
     }
 }
 

@@ -123,4 +123,41 @@ struct DessertInfo: Codable {
     let imageSource: String?
     let creativeCommonsConfirmed: String?
     let dateModified: String?
+    
+    
+    var ingredientDescription: String {
+        var description: String = ""
+        
+        for i in 1...20 {
+            let ingredientKey = "ingredient\(i)"
+            let measureKey = "measure\(i)"
+            
+            if let ingredient = self[ingredientKey], let measure = self[measureKey], !ingredient.isEmpty {
+                let ingrientString = "\(measure) \(ingredient)"
+                                
+                if !description.isEmpty {
+                    description += "\n"
+
+                }
+                description += ingrientString
+                
+            }
+        }
+        
+        return description
+    }
+    
+    
+    // Helper function to get value for key since struct does not contain native subscript support
+    subscript(key: String) -> String? {
+        let mirror = Mirror(reflecting: self)
+        for child in mirror.children {
+            if child.label == key {
+                return child.value as? String
+            }
+        }
+        return nil
+    }
+    
+
 }
