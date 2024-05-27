@@ -28,35 +28,40 @@ struct DessertListView: View {
                 //utilizes a LazyVGrid for performance optimization
                 LazyVGrid(columns: columns, content: {
                     ForEach(dessertViewModel.meals) { meal in
-                        ZStack(alignment: .bottom){
-                            
-                            KFImage(URL(string: meal.image))
-                            
-                            //Custom loading screen for fetch reward
-                                .placeholder({
-                                    Image("fetch-loading")
-                                })
-                                .resizable()
-                                .scaledToFit()
-                                .clipShape(RoundedRectangle(cornerRadius: 5))
-                                .padding(1.5)
-                                .overlay {
-                                    Rectangle()
-                                        .stroke()
-                                        .foregroundStyle(LinearGradient(colors: [.yellow, .black], startPoint: .leading, endPoint: .bottomTrailing))
-                                        .clipShape(RoundedRectangle(cornerRadius: 11))
-                                    
-                                }
-                            
-                            //Refactored into its own SwiftUI View & ViewModifier for reusability
-                            DessertTextView(dessertName: meal.dessertName)
-                            
+                        NavigationLink(value: meal) {
+                            ZStack(alignment: .bottom){
+                                
+                                KFImage(URL(string: meal.image))
+                                
+                                //Custom loading screen for fetch reward
+                                    .placeholder({
+                                        Image("fetch-loading")
+                                    })
+                                    .resizable()
+                                    .scaledToFit()
+                                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                                    .padding(1.5)
+                                    .overlay {
+                                        Rectangle()
+                                            .stroke()
+                                            .foregroundStyle(LinearGradient(colors: [.yellow, .black], startPoint: .leading, endPoint: .bottomTrailing))
+                                            .clipShape(RoundedRectangle(cornerRadius: 11))
+                                        
+                                    }
+                                
+                                //Refactored into its own SwiftUI View & ViewModifier for reusability
+                                DessertTextView(dessertName: meal.dessertName)
+                                
+                            }
                         }
                         
                         
                     }
                 })
             }
+            .navigationDestination(for: Dessert.self, destination: { dessert in
+                DessertDetailView()
+            })
             .scrollIndicators(.hidden)
             .navigationTitle("Fetch Dessert")
             

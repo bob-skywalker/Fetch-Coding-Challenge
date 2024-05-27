@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Dessert: Codable, Identifiable {
+struct Dessert: Codable, Identifiable, Hashable {
     
     init(dessertName: String, image: String, id: String) {
         self.dessertName = dessertName
