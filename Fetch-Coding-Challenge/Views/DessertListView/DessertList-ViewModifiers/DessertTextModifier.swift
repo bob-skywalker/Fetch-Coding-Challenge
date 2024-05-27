@@ -11,7 +11,7 @@ struct DessertTextModifier: ViewModifier {
     
     //Custom configuration for monitoring user's light/dark mode setting
     @Environment(\.colorScheme) var colorScheme
-     
+    
     func body(content: Content) -> some View {
         content
             .padding(5)
@@ -20,6 +20,7 @@ struct DessertTextModifier: ViewModifier {
             .font(.caption)
             .clipShape(RoundedRectangle(cornerRadius: 11))
             .offset(y: -10)
+        
     }
 }
 

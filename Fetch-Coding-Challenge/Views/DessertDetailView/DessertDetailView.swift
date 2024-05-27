@@ -67,6 +67,8 @@ struct DessertDetailView: View {
                     HStack {
                         Text("Instruction:")
                             .font(.title)
+                            .foregroundStyle(isDarkMode ? .white : .black)
+                        
                         Spacer()
                         
                         if dessertYoutubeLink != nil {
@@ -95,6 +97,8 @@ struct DessertDetailView: View {
                     
                     VStack(alignment: .leading){
                         Text(dessertDetailViewModel.dessertDetail?.instructions ?? "")
+                            .foregroundStyle(isDarkMode ? .white : .black)
+
                         
                         Divider()
                         
@@ -104,7 +108,9 @@ struct DessertDetailView: View {
                         
                         
                         
-                        ForEach(dessertIngredientsArray, id: \.self) { ingredient in
+                        ForEach(dessertIngredientsArray.indices, id:\.self) { index in
+                            let ingredient = dessertIngredientsArray[index]
+                            
                             Button(action: {
                                 //haptic feedback on user taps
                                 let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
@@ -157,7 +163,9 @@ struct DessertDetailView: View {
     }
     
     func updateColorScheme() {
-        withAnimation(.easeOut(duration: 0.4)){
+        withAnimation(.easeOut(duration: 0.75)){
+            let heavyTouch = UIImpactFeedbackGenerator(style: .heavy)
+            heavyTouch.impactOccurred()
             isDarkMode.toggle()
             colorScheme = isDarkMode ? .dark : .light
         }

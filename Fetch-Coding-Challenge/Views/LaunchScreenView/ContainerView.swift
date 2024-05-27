@@ -10,12 +10,14 @@ import SwiftUI
 struct ContainerView: View {
     @State private var isSplashScreenViewPresented: Bool = true
     @StateObject var dessertDetailViewModel: DessertDetailViewModel = DessertDetailViewModel()
+    @StateObject var dessertListViewModel: DessertViewModel = DessertViewModel()
 
     
     var body: some View {
         if !isSplashScreenViewPresented {
             DessertListView()
                 .environmentObject(dessertDetailViewModel)
+                .environmentObject(dessertListViewModel)
         } else {
             SplashScreenView(isPresented: $isSplashScreenViewPresented)
         }

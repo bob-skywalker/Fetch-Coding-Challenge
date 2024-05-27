@@ -10,7 +10,7 @@ import Kingfisher
 
 
 struct DessertListView: View {
-    @StateObject var dessertViewModel = DessertViewModel()
+    @EnvironmentObject var dessertViewModel: DessertViewModel
     
     //State Management for toggling between light & dark mode
     @State var isDarkMode: Bool = false
@@ -34,6 +34,7 @@ struct DessertListView: View {
                                 
                                 KFImage(URL(string: meal.image))
                                 
+                                
                                 //Custom loading screen for fetch reward
                                     .placeholder({
                                         Image("fetch-loading")
@@ -52,9 +53,15 @@ struct DessertListView: View {
                                 
                                 //Refactored into its own SwiftUI View & ViewModifier for reusability
                                 DessertTextView(dessertName: meal.dessertName)
-                                    .dessertTextModifier()
+                                    .padding(5)
+                                    .background(colorScheme == .dark ? .black : .white)
+                                    .foregroundStyle(colorScheme == .dark ? .white : .black).bold()
+                                    .font(.caption)
+                                    .clipShape(RoundedRectangle(cornerRadius: 11))
+                                    .offset(y: -10)
                                 
                             }
+                            .padding(.horizontal, 2)
                         }
                     }
                 })
@@ -87,7 +94,9 @@ struct DessertListView: View {
     
     //toggle between user colorScheme state
     func updateColorScheme() {
-        withAnimation(.easeIn(duration: 0.35)) {
+        withAnimation(.easeIn(duration: 0.20)) {
+            let heavyTouch = UIImpactFeedbackGenerator(style: .heavy)
+            heavyTouch.impactOccurred()
             isDarkMode.toggle()
             colorScheme = isDarkMode ? .dark : .light
         }
@@ -97,5 +106,6 @@ struct DessertListView: View {
 #Preview {
     @StateObject var dessertViewModel = DessertViewModel()
     
-    return DessertListView(dessertViewModel: dessertViewModel)
+    return DessertListView()
+        .environmentObject(dessertViewModel)
 }
