@@ -37,3 +37,4 @@ To run the Fetch-Coding-Challenge app on your device, follow these steps:
 ## Layout
 
 - Custom Fetch Dessert Launch Screen:
+![Fetch Dessert Layout](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExeWsyY2o3MmV6Z3llY3R0aHNmbHpyZjNwZ2I2eGM2ZTF3em9xMGVwbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ns1a2tLEKzqRsfW1mg/giphy.gif)
