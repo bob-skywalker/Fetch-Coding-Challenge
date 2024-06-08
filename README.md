@@ -33,3 +33,33 @@ To run the Fetch-Coding-Challenge app on your device, follow these steps:
 
 - [Kingfisher](https://github.com/onevcat/Kingfisher): A lightweight and pure Swift library for downloading and caching images from the web.
 - [Combine](https://developer.apple.com/documentation/combine): Apple's framework for processing values over time, used for reactive programming in Swift.
+
+## Layout
+
+### Custom Launch Screen AND Custom Loading View:
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/3bf3f7dd-cca9-4e43-a42b-e2ee021add25" alt="launch_screen" width="400" />
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/8151a55f-627f-4298-b22c-2ca32f23e004" alt="loading_progress_view" width="400" />
+</div>
+
+### Light AND Dark Mode List View:
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/c344efb0-7cff-4933-bddb-3d481ed4a2ba" alt="dessert_list" width="400" />
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/c45746a6-dc75-493f-8a0f-61ed2d321902" alt="dark_mode_list" width="400"/>
+</div>
+
+### Dessert Detail View: 
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/f59de5de-8a8e-46d5-83bb-4d21a7373459" alt="dessert_list" width="400" />
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/89f885bc-7edc-4a5b-ba03-d9f58a3c21d6" alt="dark_mode_list" width="400"/>
+</div>
+
+### Adaptive Landscape Mode: 
+
+<div style="display: flex; gap: 20px; justify-content: center;">
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/60020557-890d-4cfa-913c-af5672bd7366" alt="dessert_list" width="400" />
+  <img src="https://github.com/bob-skywalker/Fetch-Coding-Challenge-iOS/assets/105678115/beab6aa7-1f41-4eca-aa08-4fce84ac5cac" alt="dark_mode_list" width="400"/>
+</div>
