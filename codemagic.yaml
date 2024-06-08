@@ -1,5 +1,11 @@
 workflows:
   hello-world:
-    name: Hello-World-workflow
-    instance_type: mac_pro
+    name: Fetch Pipeline
+    scripts:
+      - name: CICD Started
+        script: echo "Welcome to your CICD set up"
+    publishing:
+      email:
+        recipients:
+          - bobzhong@gmail.com
       
