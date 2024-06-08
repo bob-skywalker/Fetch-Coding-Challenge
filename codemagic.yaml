@@ -7,5 +7,5 @@ workflows:
     publishing:
       email:
         recipients:
-          - bobzhong@gmail.com
+          - bobzhong64@gmail.com
       
